@@ -78,7 +78,7 @@ nav .menu a:hover {
   justify-content: center;
   text-align: center;
   color: #fff;
-  background: url('/B13-A02-TechWave/assets/hero-bg.png') center/cover no-repeat;
+  background: url('./images/hero-bg.png') center/cover no-repeat;
   overflow: hidden;
 }
 
@@ -685,14 +685,17 @@ nav .menu a:hover {
     width: 100%;
     padding: 30px 20px;
     gap: 24px;
+  background: url('./images/footer-bg.png') center/cover no-repeat;
+  
   }
   .footer-logo {
     font-size: 28px;
     line-height: 36px;
   }
   .footer-platforms {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 16px;
     width: 100%;
     max-width: 300px; 
@@ -706,4 +709,3 @@ nav .menu a:hover {
   .footer-copy {
     font-size: 14px;
   }
-
