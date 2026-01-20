@@ -9,12 +9,12 @@
   font-optical-sizing: auto;
 }
 
-header{
+header {
   background-color: #1A0B2E;
   padding: 20px 0;
 }
 
-.navbar{
+.navbar {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -22,12 +22,15 @@ header{
   justify-content: space-between;
   position: relative;
   padding: 0 20px;
+  color: #fff;
 }
-.logo img{
+
+.logo img {
   height: 32px;
   width: 219px;
 }
-.menu{
+
+nav .menu {
   list-style: none;
   display: flex;
   gap: 32px;
@@ -36,33 +39,190 @@ header{
   transform: translateX(-50%);
 }
 
-.menu a{
-  font-size: 16px;
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
+nav .menu a {
   font-size: 16px;
   font-weight: 500;
   line-height: 120%;
+  color: #fff; 
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-.menu a:hover{
-  color: #00bcd4;
+nav .menu a:hover {
+  color: #F7E93F; 
 }
-.btn{
-  background: linear-gradient(#F7E93F, #FB09B4, #9100F8);
+.btn {
+  background: linear-gradient(90deg, #F7E93F, #FB09B4, #9100F8);
   color: #fff;
   border: none;
-  padding: 16px 12px;
+  padding: 12px 30px;
   border-radius: 10000px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   font-size: 16px;
 }
 
-.btn:hover{
-  background: linear-gradient(#F7E93F, #FB09B4, #9100F8);
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px;
+  background-image: url('/B13-A02-TechWave/assets/hero-bg.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.hero > * { 
+    position: relative; 
+    z-index: 1; 
+}
+
+.hero .circle {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin-bottom: 40px;
+}
+
+.hero .circle-img, .hero .mic-img {
+  display: block; 
+}
+
+.hero .circle-img {
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%; 
+  object-fit: cover;
+}
+
+.hero .mic-img {
+  position: absolute;
+   bottom: -10px;
+   right: -10px;
+   width: 80px; height: 80px;
+}
+
+.hero h1 {
+     font-size: 60px; 
+     font-weight: 900;
+     margin-bottom: 20px;
+     text-shadow: 1px 1px 6px rgba(0,0,0,0.6); 
+    }
+
+.hero p { 
+    font-size: 16px;
+     max-width: 400px;
+     margin-bottom: 40px; 
+     line-height: 1.6; 
+     text-shadow: 1px 1px 4px rgba(0,0,0,0.5); 
+    }
+
+.hero .button { 
+    display: flex; 
+    gap: 8px; 
+    justify-content: center; 
+}
+
+.hero .btn { 
+    padding: 12px 30px; 
+    font-size: 16px; 
+    border-radius: 30px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+
+.hero .btn.primary { 
+    background: linear-gradient(90deg, #F7E93F, #FB09B4, #9100F8); 
+    color: #fff; 
+}
+.hero .btn.primary:hover { 
+    filter: brightness(1.1); 
+}
+
+.hero .btn.outline { 
+    color: #00FF88; 
+    border: 2px solid #00FF88; 
+    background: transparent; 
+}
+.hero .btn.outline:hover { 
+    background-color: #fff; 
+    color: #00FF88; 
+}
+
+
+.about-section {
+  width: 100%;
+  background-color: #1A0B2E;
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.about-container h2 {
+  font-size: 48px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.about-container .about-desc,
+.about-container p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.about-container ul.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 80px;       
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+  flex-wrap: nowrap;
+}
+
+.about-container ul.about-stats li {
+  font-size: 48px;      
+  font-weight: bold;
+  color: #00FF88;        
+  text-align: center;
+  line-height: 1.2;
+  max-width: 220px;
+}
+.about-container ul.about-stats li span {
+  display: block;
+  font-size: 16px;       
+  color: #fff;
+  margin-top: 5px;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 
@@ -71,34 +231,15 @@ header{
 
 
 
-/* Media Query for small screens */
-@media (max-width: 576px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px 20px;
-  }
-  .logo img {
-    height: 20px; 
-    width: auto;
-    margin-bottom: 10px;
-  }
-  .menu {
-    position: static; 
-    transform: none;
-    width: 100%;
-    justify-content: space-around; 
-    margin-bottom: 10px;
-    gap: 15px;
-  }
-  .menu a {
-    font-size: 18px;
-    font-weight: 500;
-  }
-  .btn {
-    width: 100%;
-    text-align: center;
-    padding: 12px 0;
-  }
-}
 
+
+
+
+
+
+
+
+/*responsive code */
+@media screen {
+    
+}
